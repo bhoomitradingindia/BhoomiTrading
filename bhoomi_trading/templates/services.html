@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block title %}Services – Bhoomi Trading{% endblock %}
+
+{% block content %}
+
+<section class="page-hero" aria-label="Page header">
+  <div class="container page-hero__inner fade-up">
+    <p class="section-eyebrow">What We Do</p>
+    <h1>Our Services</h1>
+    <p class="page-hero__sub">
+      From retail material supply to wholesale orders — we serve every scale of bag-making business.
+    </p>
+  </div>
+</section>
+
+
+
+    <div class="services-grid">
+      {% for svc in services %}
+      <article class="service-card fade-up">
+        <div class="service-card__icon" aria-hidden="true">
+          {{ svc.icon }}
+        </div>
+
+        <h3 class="service-card__title">{{ svc.title }}</h3>
+
+        <p class="service-card__desc">
+          {{ svc.description }}
+        </p>
+
+        <ul class="service-card__highlights" role="list">
+          {% for h in svc.highlights %}
+          <li>{{ h }}</li>
+          {% endfor %}
+        </ul>
+
+        <a href="https://wa.me/919833037930?text=Hello%20Bhoomi%20Trading%2C%20I%20am%20interested%20in%20your%20{{ svc.title | urlencode }}%20service."
+           class="btn btn-outline btn-sm"
+           target="_blank"
+           rel="noopener">
+          Enquire Now
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="process section" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header fade-up">
+      <p class="section-eyebrow">How It Works</p>
+      <h2 id="process-heading">Simple. Fast. Reliable.</h2>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="step-num">01</div>
+        <h4>Browse & Select</h4>
+        <p>Explore our catalogue and shortlist the materials you need.</p>
+      </div>
+
+      <div class="process-connector" aria-hidden="true"></div>
+
+      <div class="process-step fade-up">
+        <div class="step-num">02</div>
+        <h4>Enquire on WhatsApp</h4>
+        <p>Click the WhatsApp button and send your material enquiry instantly.</p>
+      </div>
+
+      <div class="process-connector" aria-hidden="true"></div>
+
+      <div class="process-step fade-up">
+        <div class="step-num">03</div>
+        <h4>Confirm Order</h4>
+        <p>We share price, availability, colours and other details.</p>
+      </div>
+
+      <div class="process-connector" aria-hidden="true"></div>
+
+      <div class="process-step fade-up">
+        <div class="step-num">04</div>
+        <h4>Delivery</h4>
+        <p>Your materials are packed and dispatched as per requirement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner section" aria-label="Call to action">
+  <div class="container cta-banner__inner fade-up">
+    <div>
+      <h2>Have a custom requirement?</h2>
+      <p>Tell us your material requirement and we will help you with the best option.</p>
+    </div>
+
+    <div class="cta-banner__actions">
+      <a href="https://wa.me/{{ company.whatsapp }}?text=Hello%20Bhoomi%20Trading%2C%20I%20have%20a%20custom%20material%20requirement."
+         class="btn btn-wa"
+         target="_blank"
+         rel="noopener">
+        💬 Discuss on WhatsApp
+      </a>
+
+      <a href="/contact" class="btn btn-outline btn-light">
+        Contact Page →
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

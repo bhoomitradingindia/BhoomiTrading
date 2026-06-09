@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Bhoomi Trading – Premium supplier of Rexine, Leather, Canvas, Nylon & Polyester bag-making materials in Mumbai, India." />
+
+  <title>{% block title %}Bhoomi Trading{% endblock %}</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+
+  {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <a href="/" class="nav-logo" aria-label="Bhoomi Trading Home">
+        <img src="{{ url_for('static', filename='images/bhoomi1.png') }}" alt="Bhoomi Trading" class="nav-logo-title">
+      </a>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}">Home</a></li>
+
+        <li><a href="/services" class="nav-link {% if request.endpoint == 'services' %}active{% endif %}">Services</a>
+        </li>
+
+        <li><a href="/catalogue"
+            class="nav-link {% if request.endpoint == 'catalogue' %}active{% endif %}">Catalogue</a></li>
+
+        <li><a href="/contact" class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}">Contact</a></li>
+
+        <a href="tel:919833037930" class="nav-cta">
+          Call Now
+        </a>
+      </ul>
+
+    </div>
+  </nav>
+
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <img src="{{ url_for('static', filename='IMAGES/b.png') }}" alt="Bhoomi Trading Logo" class="footer-logo-img">
+
+        <p class="footer-address">
+          Shop No, XXX, Opp. Hindustani Masjid,<br>
+          Byculla, Mumbai - 400027,<br>
+          Maharashtra
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/catalogue">Catalogue</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Get in Touch</h4>
+        <a href="tel:+919876543210">+918879585757</a>
+        <a href="tel:+91XXXXXXXXXX">+919833037930</a>
+        <a href="mailto:bhoomitradingindia@gmail.com">bhoomitradingindia@gmail.com</a>
+
+        <a href="https://wa.me/919833037930" target="_blank" class="footer-wa">
+          💬 WhatsApp Us
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bar">
+      <p>© 2026 Bhoomi Trading. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/9833037930?text=Hello%20Bhoomi%20Trading%2C%20I%20would%20like%20to%20enquire%20about%20your%20materials."
+    class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    💬
+    <span class="whatsapp-label">WhatsApp</span>
+  </a>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+  {% block extra_js %}{% endblock %}
+</body>
+
+</html>

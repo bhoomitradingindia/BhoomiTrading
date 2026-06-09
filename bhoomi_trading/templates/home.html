@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% block title %}Bhoomi Trading – Quality Bag-Making Materials{% endblock %}
+
+{% block content %}
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-bg">
+    <!-- SVG leather/textile pattern as background atmosphere -->
+    <svg class="hero-pattern" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
+      preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <pattern id="leatherGrid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="20" height="20" fill="none" stroke="rgba(201,162,39,0.12)" stroke-width="0.5" />
+          <circle cx="10" cy="10" r="1.5" fill="rgba(201,162,39,0.08)" />
+        </pattern>
+        <pattern id="stitch" x="0" y="0" width="40" height="8" patternUnits="userSpaceOnUse">
+          <line x1="0" y1="4" x2="8" y2="4" stroke="rgba(201,162,39,0.15)" stroke-width="1.5" stroke-dasharray="6,2" />
+        </pattern>
+      </defs>
+      <rect width="200" height="200" fill="url(#leatherGrid)" />
+      <rect width="200" height="200" fill="url(#stitch)" />
+    </svg>
+  </div>
+
+  <div class="hero-content fade-up">
+    <p class="hero-eyebrow">Est. {{ company.established }} · Mumbai, India</p>
+    <h1 class="hero-title">Bhoomi<br><em>Trading</em></h1>
+    <p class="hero-tagline">{{ company.tagline }}</p>
+    <div class="hero-actions">
+      <a href="/catalogue" class="btn btn-primary">Explore Catalogue</a>
+      <a href="https://wa.me/919833037930?text=Hello%20Bhoomi%20Trading%2C%20I%20would%20like%20to%20know%20more%20about%20your%20materials."
+        class="btn btn-ghost" target="_blank" rel="noopener">
+        💬 WhatsApp Us
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none">
+      <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" stroke-width="1.5" />
+      <circle cx="8" cy="7" r="2" fill="currentColor">
+        <animate attributeName="cy" values="7;14;7" dur="1.8s" repeatCount="indefinite" />
+      </circle>
+    </svg>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TRUST BAR
+══════════════════════════════════════ -->
+<section class="trust-bar" aria-label="Key facts">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item fade-up">
+        <strong>20+</strong>
+        <span>Years in Business</span>
+      </div>
+      <div class="trust-item fade-up" style="--delay:0.1s">
+        <strong>500+</strong>
+        <span>Material Variants</span>
+      </div>
+      <div class="trust-item fade-up" style="--delay:0.2s">
+        <strong>5</strong>
+        <span>Core Material Ranges</span>
+      </div>
+      <div class="trust-item fade-up" style="--delay:0.3s">
+        <strong>Pan-India</strong>
+        <span>Delivery Network</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     ABOUT
+══════════════════════════════════════ -->
+<section class="about section" id="about" aria-labelledby="about-heading">
+  <div class="container about-grid">
+    <div class="about-visual fade-up" aria-hidden="true">
+      <div class="about-swatch-stack">
+        <div class="swatch swatch-1"><span>Rexine</span></div>
+        <div class="swatch swatch-2"><span>Leather</span></div>
+        <div class="swatch swatch-3"><span>Canvas</span></div>
+        <div class="swatch swatch-4"><span>Nylon</span></div>
+      </div>
+    </div>
+    <div class="about-text fade-up" style="--delay:0.15s">
+      <p class="section-eyebrow">About Us</p>
+      <h2 id="about-heading">Crafting the materials<br>that carry your world</h2>
+      <p class="lead">{{ company.description }}</p>
+      <a href="/services" class="btn btn-outline">Our Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FEATURED MATERIALS
+══════════════════════════════════════ -->
+<section class="featured section" aria-labelledby="featured-heading">
+  <div class="container">
+    <div class="section-header fade-up">
+      <p class="section-eyebrow">What We Supply</p>
+      <h2 id="featured-heading">Featured Material Ranges</h2>
+      <p class="section-sub">From raw fabric rolls to finished surface materials — everything your workshop needs.</p>
+    </div>
+    <section class="material-info section">
+      <div class="container">
+        <div class="section-header fade-up">
+          <p class="section-eyebrow">Material Details</p>
+          <h2>Popular Bag-Making Materials</h2>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card fade-up">
+            <h3>Rexine</h3>
+            <p>
+              Rexine is a durable synthetic material widely used for making bags,
+              purses, wallets and covers. It gives a leather-like finish at an
+              affordable cost.
+            </p>
+          </div>
+
+          <div class="info-card fade-up">
+            <h3>Canvas</h3>
+            <p>
+              Canvas is a strong fabric material used for tote bags, school bags,
+              travel bags and shopping bags. It is known for strength and long life.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="featured-grid">
+      {% for product in featured %}
+      <article class="material-card fade-up" style="--accent: {{ product.color_accent }};">
+        <div class="material-card__icon">{{ product.icon }}</div>
+
+        <h3 class="material-card__name">{{ product.name }}</h3>
+
+        <p class="material-card__desc">{{ product.description }}</p>
+
+        <a href="/catalogue#{{ product.id }}" class="material-card__link">
+          View Range →
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="section-cta fade-up">
+      <a href="/catalogue" class="btn btn-primary">Full Catalogue</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CTA BANNER
+══════════════════════════════════════ -->
+<section class="cta-banner section" aria-label="Call to action">
+  <div class="container cta-banner__inner fade-up">
+    <div>
+      <h2>Ready to place an order?</h2>
+      <p>Reach us instantly on WhatsApp or browse the full catalogue.</p>
+    </div>
+    <div class="cta-banner__actions">
+      <a href="/catalogue" class="btn btn-primary">Browse Catalogue</a>
+      <a href="https://wa.me/919833037930?text=Hello%20Bhoomi%20Trading%2C%20I%20would%20like%20to%20place%20an%20order."
+        class="btn btn-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

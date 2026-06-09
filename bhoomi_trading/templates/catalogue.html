@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Catalogue – Bhoomi Trading{% endblock %}
+
+{% block content %}
+
+<section class="page catalogue-page">
+  <h1>Product Catalogue</h1>
+  <p class="section-sub">Explore our bag-making material ranges.</p>
+
+  <div class="catalogue-tools">
+    <input type="text" id="searchInput" placeholder="Search materials..." onkeyup="filterMaterials()">
+
+    <select id="categoryFilter" onchange="filterMaterials()">
+      <option value="all">All Materials</option>
+      <option value="Bag Material">Bag Material</option>
+    </select>
+  </div>
+
+  <div class="cards">
+    {% for material in materials %}
+    <div class="card material-card-box" id="{{ material.id }}" data-name="{{ material.name | lower }}"
+      data-category="{{ material.category }}">
+
+      <img class="product-img" src="{{material.image}}" alt="{{ material.name }}">
+
+      <h3>{{ material.name }}</h3>
+      <p>{{ material.description }}</p>
+
+      <button class="btn" onclick="toggleSubtypes('{{ loop.index }}')">
+        View Materials
+      </button>
+
+      <div class="subtype-box" id="subtypes-{{ loop.index }}">
+        {% for subtype in material.subtypes %}
+        <div class="subtype-item">
+          <span>{{ subtype }}</span>
+
+          <a class="small-btn"
+            href="https://wa.me/919833037930?text=Hello%20Bhoomi%20Trading%2C%20I%20am%20interested%20in%20{{ subtype }}.%20Please%20share%20price%2C%20available%20colors%20and%20details."
+            target="_blank">
+            Enquire
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}
