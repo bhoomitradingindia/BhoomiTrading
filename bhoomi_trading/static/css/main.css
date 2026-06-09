@@ -1398,3 +1398,75 @@ html, body {
   margin-top: 25px;
   padding-top: 15px;
 }
+
+.nav-container {
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo-title {
+  width: 170px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+  }
+
+  .nav-container {
+    padding: 0 16px;
+  }
+
+  .nav-logo-title {
+    width: 120px;
+  }
+
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .nav-toggle span {
+    width: 26px;
+    height: 2px;
+    background: #3b1b0f;
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #f7f1ea;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 25px 0;
+    display: none;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-cta {
+    width: auto;
+  }
+}
