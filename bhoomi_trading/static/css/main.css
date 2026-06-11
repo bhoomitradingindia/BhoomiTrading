@@ -1470,3 +1470,23 @@ html, body {
     width: auto;
   }
 }
+
+.enquiry-form {
+  max-width: 600px;
+  margin: 40px auto;
+  display: grid;
+  gap: 15px;
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.enquiry-form textarea {
+  min-height: 120px;
+}

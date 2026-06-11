@@ -108,5 +108,27 @@
     </a>
   </div>
 </section>
+<!--ENQ FORM SECTION-->
+<form action="/enquiry" method="POST" class="enquiry-form">
+  <input type="text" name="name" placeholder="Your Name" required>
+
+  <input type="tel" name="phone" placeholder="Phone Number" required>
+
+  <input type="email" name="email" placeholder="Email Address">
+
+  <select name="material" required>
+    <option value="">Select Material</option>
+    <option value="Rexine">Rexine</option>
+    <option value="Leather">Leather</option>
+    <option value="Canvas">Canvas</option>
+    <option value="Nylon Fabric">Nylon Fabric</option>
+  </select>
+
+  <textarea name="message" placeholder="Write your enquiry..." required></textarea>
+
+  <button type="submit" class="btn btn-primary">
+    Submit Enquiry
+  </button>
+</form>
 
 {% endblock %}
