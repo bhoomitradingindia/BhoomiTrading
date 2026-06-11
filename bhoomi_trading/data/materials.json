@@ -2,14 +2,13 @@
     {
         "id": "rexine",
         "name": "Rexine",
-        "category": "Material",
-        "description": "Used for bags, purses and wallets.",
-        "image": "https://5.imimg.com/data5/SELLER/Default/2020/11/XL/IO/BO/77629456/canvas-rexine.jpeg",
+        "category": "All Material",
+        "description": "Updated rexine material description.",
+        "image": "https://th.bing.com/th/id/OIP.klH3o1QfghoFUvS3wsM_RwHaHa?w=155&h=150&c=6&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
         "subtypes": [
             "Plain Rexine",
-            "Printed Rexine",
-            "Foam Rexine",
-            "Glossy Rexine"
+            "flower Rexine",
+            "patti Rexine"
         ]
     },
     {
