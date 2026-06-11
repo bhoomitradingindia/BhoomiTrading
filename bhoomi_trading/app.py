@@ -215,7 +215,7 @@ def api_get_enquiries():
     })
 
 
-@app.route("/api/enquiry", methods=["POST"])
+@app.route("/api/enquiry", methods=["POST","DELETE"])
 def api_add_enquiry():
     data = request.get_json()
 
@@ -225,32 +225,32 @@ def api_add_enquiry():
             "message": "No JSON data received"
         }), 400
 
-    enquiry_data = {
-        "name": data.get("name", ""),
-        "phone": data.get("phone", ""),
-        "email": data.get("email", ""),
-        "material": data.get("material", ""),
-        "message": data.get("message", "")
-    }
-
     try:
-        save_enquiry(enquiry_data)
-        save_enquiry_to_google_sheet(enquiry_data)
+        if isinstance(data, list):
+            for item in data:
+                save_enquiry(item)
+                save_enquiry_to_google_sheet(item)
+
+            return jsonify({
+                "status": "success",
+                "message": "Multiple enquiries saved successfully",
+                "total": len(data)
+            }), 201
+
+        save_enquiry(data)
+        save_enquiry_to_google_sheet(data)
 
         return jsonify({
             "status": "success",
             "message": "Enquiry saved successfully",
-            "data": enquiry_data
+            "data": data
         }), 201
 
     except Exception as e:
-        print("API enquiry error:", e)
-
         return jsonify({
             "status": "error",
             "message": str(e)
         }), 500
-
 
 # =========================
 # MATERIAL API ROUTES

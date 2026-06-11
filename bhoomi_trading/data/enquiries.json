@@ -86,5 +86,74 @@
         "email": "test@gmail.com",
         "material": "Nylon Fabric",
         "message": "this is test demo"
+    },
+    {
+        "name": "SANDESH PIMPALE",
+        "phone": "test demo",
+        "email": "sandeshp303@gmail.com",
+        "material": "Canvas",
+        "message": "this is demo testing "
+    },
+    {
+        "name": "SANDESH PIMPALE",
+        "phone": "test demo",
+        "email": "sandeshp303@gmail.com",
+        "material": "Leather",
+        "message": "this is again testing"
+    },
+    {
+        "name": "Rahul Sharma",
+        "phone": "9876543210",
+        "email": "rahul.sharma@gmail.com",
+        "material": "Rexine",
+        "message": "Please share price and available colors for Rexine."
+    },
+    {
+        "name": "Rahul Sharma",
+        "phone": "9876543210",
+        "email": "rahul.sharma@gmail.com",
+        "material": "Rexine",
+        "message": "Please share price and available colors for Rexine."
+    },
+    {
+        "name": "Priya Patil",
+        "phone": "9823456789",
+        "email": "priya.patil@gmail.com",
+        "material": "Canvas",
+        "message": "I need canvas material for tote bags. Please share details."
+    },
+    {
+        "name": "Amit Verma",
+        "phone": "9765432109",
+        "email": "amit.verma@gmail.com",
+        "material": "Leather",
+        "message": "Please send rates for artificial leather."
+    },
+    {
+        "name": "Sneha More",
+        "phone": "9988776655",
+        "email": "sneha.more@gmail.com",
+        "material": "Nylon Fabric",
+        "message": "Need nylon fabric for backpack manufacturing."
+    },
+    {
+        "name": "Vikas Jadhav",
+        "phone": "9123456780",
+        "email": "vikas.jadhav@gmail.com",
+        "material": "Lining Fabric",
+        "message": "Please share lining fabric types and minimum order quantity."
+    },
+    {
+        "name": "test demo",
+        "phone": "9123456780",
+        "email": "vikas.jadhav@gmail.com",
+        "material": "Lining Fabric",
+        "message": "Please share lining fabric types and minimum order quantity."
+    },
+    {
+        "name": "Rahul",
+        "phone": "9876543210",
+        "material": "Rexine",
+        "message": "Please share price and available colors."
     }
 ]
