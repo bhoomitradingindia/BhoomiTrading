@@ -112,10 +112,14 @@ def save_enquiry(data):
 
 
 def save_enquiry_to_google_sheet(data):
-    creds = Credentials.from_service_account_file(
-        CREDS_FILE,
-        scopes=SCOPES
-    )
+    credentials_json = os.getenv("GOOGLE_CREDENTIALS_JSON")
+
+    if credentials_json:
+        creds_info = json.loads(credentials_json)
+        creds = Credentials.from_service_account_info(creds_info, scopes=SCOPES)
+    else:
+        creds = Credentials.from_service_account_file(CREDS_FILE, scopes=SCOPES)
+        
 
     client = gspread.authorize(creds)
     sheet = client.open(GOOGLE_SHEET_NAME).sheet1
