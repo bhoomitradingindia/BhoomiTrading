@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard – Bhoomi Trading{% endblock %}
+
+{% block content %}
+
+<section class="admin-dashboard">
+<a href="/admin/logout" class="admin-logout-btn">Logout</a>
+  <div class="container">
+
+    <h1>Admin Dashboard</h1>
+    <p class="admin-subtitle">Manage Bhoomi Trading enquiries and material data.</p>
+    
+
+    <div class="dashboard-cards">
+
+      <div class="dashboard-card">
+        <h3>Total Materials</h3>
+        <p>{{ total_materials }}</p>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>Total Enquiries</h3>
+        <p>{{ total_enquiries }}</p>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>Most Requested</h3>
+        <p>{{ most_requested }}</p>
+      </div>
+
+    </div>
+
+    <div class="dashboard-table-box">
+      <h2>Recent Enquiries</h2>
+
+      <table class="dashboard-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Material</th>
+            <th>Message</th>
+            <th>WhatsApp</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for enquiry in enquiries %}
+          <tr>
+            <td>{{ enquiry.name }}</td>
+            <td>{{ enquiry.phone }}</td>
+            <td>{{ enquiry.email }}</td>
+            <td>{{ enquiry.material }}</td>
+            <td>{{ enquiry.message }}</td>
+            <td>
+              <a class="wa-table-btn"
+                 href="https://wa.me/91{{ enquiry.phone }}?text=Hello%20{{ enquiry.name }}%2C%20Thank%20you%20for%20your%20enquiry%20about%20{{ enquiry.material }}."
+                 target="_blank">
+                Reply
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      {% if enquiries|length == 0 %}
+      <p>No enquiries received yet.</p>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

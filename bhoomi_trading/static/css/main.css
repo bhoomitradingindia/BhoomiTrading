@@ -972,8 +972,7 @@ ul  { list-style: none; }
 }
 
 .footer-inner {
-  width: min(1160px, 100% - 2rem);
-  height: min(700px);
+  width: min(1100px, 100% - 2rem);
   margin-inline: auto;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1.5fr;
@@ -1483,4 +1482,155 @@ html, body {
 
 .enquiry-form textarea {
   min-height: 120px;
+}
+
+
+/*---admin dashboard---*/
+
+
+.admin-dashboard {
+  padding: 120px 6% 100px;
+  background: #f8f1e8;
+}
+
+.admin-dashboard h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.admin-subtitle {
+  color: #7a5a49;
+  margin-bottom: 40px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.dashboard-card h3 {
+  color: #7a5a49;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.dashboard-card p {
+  font-size: 30px;
+  font-weight: 700;
+  color: #3b1b0f;
+}
+
+.dashboard-table-box {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  padding: 14px;
+  border-bottom: 1px solid #ead7c3;
+  text-align: left;
+  font-size: 14px;
+}
+
+.dashboard-table th {
+  color: #3b1b0f;
+  font-weight: 700;
+}
+
+.wa-table-btn {
+  background: #25D366;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-dashboard {
+    padding: 100px 20px;
+  }
+}
+
+/* admin login css*/
+.admin-login-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px;
+  background: #f8f1e8;
+}
+
+.admin-login-box {
+  background: white;
+  width: 420px;
+  max-width: 100%;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.admin-login-box h1 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 10px;
+}
+
+.admin-login-box p {
+  color: #7a5a49;
+  margin-bottom: 25px;
+}
+
+.admin-login-box form {
+  display: grid;
+  gap: 15px;
+}
+
+.admin-login-box input {
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.login-error {
+  background: #ffe1e1;
+  color: #9b1c1c;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.admin-logout-btn {
+  display: inline-block;
+  margin: 15px 0 30px;
+  background: #3b1b0f;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
 }

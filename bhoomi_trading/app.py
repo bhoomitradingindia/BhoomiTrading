@@ -2,12 +2,21 @@ import os
 import json
 from datetime import datetime
 
-from flask import Flask, render_template, request, redirect, jsonify
+from flask import Flask, render_template, request, redirect, jsonify, session
 import gspread
 from google.oauth2.service_account import Credentials
 
 
 app = Flask(__name__)
+
+#admin login====
+
+app.secret_key = "bhoomi_admin_secret_2026"
+
+ADMIN_USERNAME = "owner"
+ADMIN_PASSWORD = "bhoomi123"
+
+#end====
 
 # =========================
 # BASE PATHS
@@ -411,6 +420,64 @@ def api_delete_material(material_id):
         "status": "success",
         "message": "Material deleted successfully"
     })
+
+
+@app.route("/admin/dashboard")
+def admin_dashboard():
+
+    if not session.get("admin_logged_in"):
+        return redirect("/admin/login")
+    
+    materials = load_materials()
+    enquiries = load_enquiries()
+
+    total_materials = len(materials)
+    total_enquiries = len(enquiries)
+
+    material_count = {}
+    for enquiry in enquiries:
+        material = enquiry.get("material", "Unknown")
+        material_count[material] = material_count.get(material, 0) + 1
+
+    most_requested = "No enquiries yet"
+    if material_count:
+        most_requested = max(material_count, key=material_count.get)
+
+    return render_template(
+        "admin_dashboard.html",
+        company=company,
+        materials=materials,
+        enquiries=enquiries,
+        total_materials=total_materials,
+        total_enquiries=total_enquiries,
+        most_requested=most_requested
+    )
+@app.route("/admin/login", methods=["GET", "POST"])
+def admin_login():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        if username == ADMIN_USERNAME and password == ADMIN_PASSWORD:
+            session["admin_logged_in"] = True
+            return redirect("/admin/dashboard")
+
+        return render_template(
+            "admin_login.html",
+            company=company,
+            error="Invalid username or password"
+        )
+
+    return render_template("admin_login.html", company=company)
+
+
+#--logout--#
+@app.route("/admin/logout")
+def admin_logout():
+    session.pop("admin_logged_in", None)
+    return redirect("/admin/login")
+
+#--logout--#
 
 
 # =========================

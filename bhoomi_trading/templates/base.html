@@ -46,10 +46,12 @@
             class="nav-link {% if request.endpoint == 'catalogue' %}active{% endif %}">Catalogue</a></li>
 
         <li><a href="/contact" class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}">Contact</a></li>
+        {% if request.endpoint not in ['admin_dashboard', 'admin_login'] %}
 
         <a href="tel:8104728242" class="nav-cta">
           Call Now
         </a>
+        {% endif %}
       </ul>
 
     </div>
@@ -59,6 +61,7 @@
     {% block content %}{% endblock %}
   </main>
 
+  {% if request.endpoint not in ['admin_dashboard', 'admin_login'] %}
   <footer class="footer">
     <div class="footer-inner">
 
@@ -97,7 +100,9 @@
     <div class="footer-bar">
       <p>© 2026 Bhoomi Trading. All rights reserved.</p>
     </div>
+    <li><a href="/admin/login">Owner Login</a></li>
   </footer>
+  {% endif %}
 
   <a href="https://wa.me/81047 28242?text=Hello%20Bhoomi%20Trading%2C%20I%20would%20like%20to%20enquire%20about%20your%20materials."
     class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
