@@ -13,8 +13,8 @@ app = Flask(__name__)
 
 app.secret_key = "bhoomi_admin_secret_2026"
 
-ADMIN_USERNAME = "owner"
-ADMIN_PASSWORD = "bhoomi123"
+ADMIN_USERNAME = "admin"
+ADMIN_PASSWORD = "adminxyz"
 
 #end====
 
@@ -455,8 +455,8 @@ def admin_dashboard():
 @app.route("/admin/login", methods=["GET", "POST"])
 def admin_login():
     if request.method == "POST":
-        username = request.form.get("username")
-        password = request.form.get("password")
+        username = request.form.get("username","").strip()
+        password = request.form.get("password","").strip()
 
         if username == ADMIN_USERNAME and password == ADMIN_PASSWORD:
             session["admin_logged_in"] = True
