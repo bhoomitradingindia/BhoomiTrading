@@ -73,5 +73,38 @@
             "Satin Lining",
             "Cotton Lining"
         ]
+    },
+    {
+        "id": "premium-rexine",
+        "name": "Premium Rexine",
+        "category": "Rexine",
+        "description": "High quality bag material",
+        "image": "image_url",
+        "subtypes": [
+            "Plain Rexine",
+            "Printed Rexine"
+        ]
+    },
+    {
+        "id": "premium-rexine",
+        "name": "Premium Rexine",
+        "category": "Rexine",
+        "description": "High quality bag material",
+        "image": "image_url",
+        "subtypes": [
+            "Plain Rexine",
+            "Printed Rexine"
+        ]
+    },
+    {
+        "id": "premium-rexine",
+        "name": "Premium Rexine",
+        "category": "Rexine",
+        "description": "High quality bag material",
+        "image": "image_url",
+        "subtypes": [
+            "Plain Rexine",
+            "Printed Rexine"
+        ]
     }
 ]

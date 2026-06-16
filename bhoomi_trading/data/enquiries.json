@@ -155,5 +155,93 @@
         "phone": "9876543210",
         "material": "Rexine",
         "message": "Please share price and available colors."
+    },
+    {
+        "name": "rajveer PIMPALE",
+        "phone": "test demo",
+        "email": "sandeshp303@gmail.com",
+        "material": "Canvas",
+        "message": "this is demo testing "
+    },
+    {
+        "name": "rajveer PIMPALE",
+        "phone": "test demo",
+        "email": "sandeshp303@gmail.com",
+        "material": "Canvas",
+        "message": "this is demo testing "
+    },
+    {
+        "name": "iojassoia",
+        "phone": "56678768",
+        "email": "patilsanu963@gmail.com",
+        "material": "Nylon Fabric",
+        "message": "soijadoiaod"
+    },
+    {
+        "name": "sp",
+        "phone": "9876543210"
+    },
+    {
+        "name": "iojassoia",
+        "phone": "56678768",
+        "email": "patilsanu963@gmail.com",
+        "material": "Leather",
+        "message": "testing demo "
+    },
+    {
+        "name": "Amit Patil",
+        "phone": "9823456710",
+        "email": "amitpatil@gmail.com",
+        "material": "Canvas Fabric",
+        "message": "Need canvas fabric samples for school bag manufacturing."
+    },
+    {
+        "name": "Sneha More",
+        "phone": "9765432108",
+        "email": "snehamore@gmail.com",
+        "material": "Nylon Fabric",
+        "message": "Please share price details for waterproof nylon material."
+    },
+    {
+        "name": "Rohan Traders",
+        "phone": "9876501234",
+        "email": "rohantraders@gmail.com",
+        "material": "Leather",
+        "message": "Looking for bulk leather material for premium handbags."
+    },
+    {
+        "name": "Priya Bags",
+        "phone": "9012345678",
+        "email": "priyabags@gmail.com",
+        "material": "Polyester Fabric",
+        "message": "Need polyester fabric in different colors for travel bags."
+    },
+    {
+        "name": "Kiran Enterprises",
+        "phone": "9988776655",
+        "email": "kiranenterprises@gmail.com",
+        "material": "Rexine",
+        "message": "Require rexine rolls for office bag production."
+    },
+    {
+        "name": "Test User",
+        "phone": "9876543210",
+        "email": "test@gmail.com",
+        "material": "Rexine",
+        "message": "Testing MongoDB enquiry"
+    },
+    {
+        "name": "Test User",
+        "phone": "9876543210",
+        "email": "test@gmail.com",
+        "material": "Rexine",
+        "message": "Testing MongoDB enquiry"
+    },
+    {
+        "name": "sa",
+        "phone": "sasa",
+        "email": "sp@gmail.com",
+        "material": "Nylon Fabric",
+        "message": "whats up"
     }
 ]
