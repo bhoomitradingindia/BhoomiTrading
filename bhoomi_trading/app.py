@@ -1,4 +1,7 @@
 import os
+import os
+
+MONGO_URI = os.environ.get("MONGO_URI")
 import json
 from datetime import datetime
 from urllib.parse import quote_plus
