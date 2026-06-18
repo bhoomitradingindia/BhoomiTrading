@@ -2,3 +2,4 @@ flask
 gunicorn
 gspread
 google-auth
+pymongo==4.6.q
